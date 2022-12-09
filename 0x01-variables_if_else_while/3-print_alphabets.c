@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * main - Prints the alphabet in lowerase then in uppercase..
  *
@@ -13,6 +14,11 @@ int main(void)
 	{
 		putchar(ch);
 		ch++;
+	}
+	while (CH <= 'Z')
+	{
+		putchar(CH);
+		CH++;
 	}
 
 	putchar('\n');
