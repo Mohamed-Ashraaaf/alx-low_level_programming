@@ -18,7 +18,7 @@ int main(void)
 			fp--;
 		}
 	}
-	printf("%ld\n", prime);
+	printf("%ld\n", fp);
 
 	return (0);
 }
