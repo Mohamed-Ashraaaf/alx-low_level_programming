@@ -45,19 +45,19 @@ char **strtow(char *str)
 				for (k = 0; k <= j; k++)
 				{
 					x = p[k];
-				free(x);
+					free(x);
+				}
+				free(p);
+				return (NULL);
 			}
-			free(p);
-			return (NULL);
+			for (m = 0; wordf < i; wordf++)
+			{
+				p[j][m] = str[wordf];
+				m++;
+			}
+			p[j][m] = '\0';
+			j++;
 		}
-		for (m = 0; wordf < i; wordf++)
-		{
-			p[j][m] = str[wordf];
-			m++;
-		}
-		p[j][m] = '\0';
-		j++;
-	}
-	p[j] = NULL;
-	return (p);
+		p[j] = NULL;
+		return (p);
 }
