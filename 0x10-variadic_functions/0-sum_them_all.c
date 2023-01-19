@@ -1,5 +1,6 @@
 #include "variadic_functions.h"
 #include <stdrag.h>
+#include <stdio.h>
 
 /**
   * sum_them_all - Entry Point
