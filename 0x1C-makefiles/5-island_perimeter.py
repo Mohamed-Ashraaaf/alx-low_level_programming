@@ -1,32 +1,18 @@
 #!/usr/bin/python3
 
 def island_perimeter(grid):
-    """
-    Calculates the perimeter of the island described in the grid.
-
-    Args:
-        grid (list[list[int]]): A list of lists representing the grid.
-
-    Returns:
-        int: The perimeter of the island.
-
-    """
-    if not grid:
-        return 0
-
-    peri = 0
-    rows = len(grid)
-    cols = len(grid[0])
-
-    for i in range(rows):
-        for j in range(cols):
-            if grid[i][j] == 1:
-                peri += 4
-
-                if i > 0 and grid[i - 1][j] == 1:
-                    peri -= 2
-
-                if j > 0 and grid[i][j - 1] == 1:
-                    peri -= 2
-
-    return peri
+    """ Calculates the perimeter of the island described in the grid """
+    perim = 0
+    gl = []
+    for i in range(len(grid)):
+        for j in range(len(grid[i])):
+            gl.append(grid[i][j])
+    for i in range(len(gl)):
+        if i < len(gl) - 1 and i > 0:
+            if gl[i] == 0 and gl[i + 1] == 1 or gl[i] == 0 and gl[i - 1] == 1:
+                perim += 1
+    if perim % 2 == 0:
+        perim *= 2
+    else:
+        perim = (perim * 2) - 1
+    return perim
